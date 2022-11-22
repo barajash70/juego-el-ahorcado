@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+
+    background-size: contain;
+    font-family: 'Inter', sans-serif;
+    background: #F3F5FC;
+}
+
+.btn-iniciar {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    /* padding: 2rem; */
+
+    position: absolute;
+    width: 10rem;
+    height: 2rem;
+    left: 0;
+    top: 10rem;
+
+    /* Dark blue/dark-blue-300 */
+
+    background: #0A3871;
+    border-radius: 4rem;
+    font-style: normal;
+    font-weight: 400;
+    font-size: medium;
+    line-height: 6px;
+    display: flex;
+    justify-content: center;
+
+    /* White */
+
+    color: #FFFFFF;
+}
+
+.logo {
+    position: absolute;
+    left: 10rem;
+    right: 37.43%;
+    top: 50px;
+    bottom: 0%;
+    width: 50px;
+    height: 50px;
+}
+
+.canvas {
+    margin-left: 2.5rem;
+    width: 1024px;
+    height: 800px
+}
+
+.botones-home {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    left: 42rem;
+}
