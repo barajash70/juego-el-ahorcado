@@ -6,10 +6,10 @@ body {
 
     background-size: contain;
     font-family: 'Inter', sans-serif;
-    background: #F3F5FC;
+    background: wheat;
 }
 
-.btn-iniciar {
+.btnIniciar {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -49,14 +49,14 @@ body {
 
 .canvas {
     margin-left: 2.5rem;
-    width: 1024px;
-    height: 800px
+    width: 600px;
+    height: 400px
 }
 
-.botones-home {
+.botonesHome {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
-    left: 42rem;
+    left: 15rem;
 }
