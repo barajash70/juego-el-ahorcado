@@ -47,11 +47,11 @@ body {
     height: 50px;
 }
 
-.canvas {
+/* .canvas {
     margin-left: 2.5rem;
-    width: 600px;
-    height: 400px
-}
+    width: 1200px;
+    height: 900px
+} */
 
 .botonesHome {
     display: flex;
