@@ -12,7 +12,10 @@ let palabras = ["ALURA", "ORACLE", "ONE", "JAVASCRIPT", "HTML", "CSS"];
 let palabraSecreta = "";
 
 let letras = [];
-let errores = 8;
+let intentos = 8;
+let largoDeLetrasCorrectas = 0;
+
+
 
 
 //PalabraSecreta
@@ -21,24 +24,24 @@ function escojerPalabraSecreta() {
     let palabra = palabras[Math.floor(Math.random() * palabras.length)]
     palabraSecreta = palabra;
     console.log(palabraSecreta);
+
+
+
+
 }
 
-function comprobarLetra(key) {
-    let estado = false
-    if (key >= 65 && letras.indexOf(key) || key <= 90 && letras.indexOf(key)) {
-        letras.push(key);
-        console.log(key);
-        return estado;
-    } else {
-        estado = true;
-        console.log(key);
-        return estado;
-    }
+function comprobarLetra(letra) {
+    let esValido = /^[A-Z]+$/.test(letra);
+    return esValido;
 }
 
 function anadirLetraIncorecta() {
-    errores -= 1;
-    console.log(errores)
+    intentos -= 1;
+}
+
+
+function anadirLetraCorecta() {
+    largoDeLetrasCorrectas = largoDeLetrasCorrectas + 1;
 }
 
 
@@ -54,29 +57,27 @@ function iniciarJuego() {
     dibujarCanvas();
     dibujarLinea(palabraSecreta);
 
-    document.onkeydown = (e) => {
+    document.addEventListener("keyup", (e) => {
         let letra = e.key.toUpperCase();
+
+        if (largoDeLetrasCorrectas == palabraSecreta.length) return;
+        if (intentos == 0) return;
+        if (!comprobarLetra(letra)) return; //el signo de admiracion se utiliza para negacion 
 
 
         if (comprobarLetra(letra) && palabraSecreta.includes(letra)) {
-
-
-
             for (let i = 0; i < palabraSecreta.length; i++) {
-
                 if (palabraSecreta[i] === letra) {
-                    console.log(i);
-
+                    anadirLetraCorecta();
                     escribirLetraCorrecta(i, palabraSecreta);
-
                 }
             }
         } else {
             anadirLetraIncorecta(letra);
-            escribirLetraIncorrecta(letra, errores);
+            escribirLetraIncorrecta(letra, intentos);
         }
+    });
 
-    }
 }
 
 

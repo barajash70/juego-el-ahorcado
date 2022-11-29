@@ -93,9 +93,9 @@ export function dibujarCanvas() {
 
 export function dibujarLinea(palabraSecreta) {
     const tablero = document.getElementById("forca").getContext("2d");
-    tablero.lineWidth = 8;
-    tablero.lineCap = "butt";
-    tablero.lineJoin = "butt";
+    tablero.lineWidth = 2;
+    tablero.lineCap = "round";
+    tablero.lineJoin = "round";
     tablero.fillStyle = "#F3F5F6";
     tablero.strokeStyle = "#0A3871";
 
@@ -103,8 +103,8 @@ export function dibujarLinea(palabraSecreta) {
 
     for (let i = 0; i < palabraSecreta.length; i++) {
         const tablero = document.getElementById("forca").getContext("2d");
-        tablero.moveTo(350 + (anchura * i), 640)
-        tablero.lineTo(350 + (anchura * i), 640)
+        tablero.moveTo(340 + (anchura * i), 640)
+        tablero.lineTo(370 + (anchura * i), 640)
     }
 
     tablero.stroke();
@@ -114,7 +114,7 @@ export function dibujarLinea(palabraSecreta) {
 export function escribirLetraCorrecta(index, palabraSecreta) {
     const tablero = document.getElementById("forca").getContext("2d");
     tablero.font = "bold 30px Inter";
-    tablero.lineWidth = 6;
+    tablero.lineWidth = 4;
     tablero.lineCap = "round";
     tablero.lineJoin = "round";
     tablero.fillStyle = "#F3F5F6";
@@ -131,4 +131,5 @@ export function escribirLetraIncorrecta(letra, errorsLeft) {
     tablero.lineJoin = "round";
     tablero.fillStyle = "#F3F5F6";
     tablero.strokeText(letra, 200 + (50 * (10 - errorsLeft)), 720, 40);
+
 }
