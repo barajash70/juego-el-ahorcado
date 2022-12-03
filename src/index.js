@@ -1,5 +1,5 @@
 import './css/style.css';
-import { dibujarCanvas, dibujarLinea, escribirLetraCorrecta, escribirLetraIncorrecta } from './js/canvas.js';
+import { dibujarCanvas, dibujarLinea, escribirLetraCorrecta, escribirLetraIncorrecta, escribirPalabra } from './js/canvas.js';
 
 
 
@@ -11,9 +11,10 @@ let palabras = ["ALURA", "ORACLE", "ONE", "JAVASCRIPT", "HTML", "CSS"];
 // const tablero = document.getElementById("forca").getContext("2d");
 let palabraSecreta = "";
 
-let letras = [];
-let intentos = 8;
+
+let intentos = 10;
 let largoDeLetrasCorrectas = 0;
+
 
 
 
@@ -60,8 +61,14 @@ function iniciarJuego() {
     document.addEventListener("keyup", (e) => {
         let letra = e.key.toUpperCase();
 
+        //valido que ya se completo el juego correctamente
         if (largoDeLetrasCorrectas == palabraSecreta.length) return;
+
+        //valido que ya se completo el juego erroneamente
         if (intentos == 0) return;
+
+        console.log(comprobarLetra);
+        //valido que ya se comprobo la letra correcta
         if (!comprobarLetra(letra)) return; //el signo de admiracion se utiliza para negacion 
 
 
@@ -76,6 +83,17 @@ function iniciarJuego() {
             anadirLetraIncorecta(letra);
             escribirLetraIncorrecta(letra, intentos);
         }
+
+        console.log(largoDeLetrasCorrectas == palabraSecreta.length);
+        //valido que ya se completo el juego correctamente
+
+        if (largoDeLetrasCorrectas == palabraSecreta.length) {
+            escribirPalabra("Ganaste");
+        }
+        if (intentos == 0) {
+            escribirPalabra("Perdiste");
+        }
+
     });
 
 }

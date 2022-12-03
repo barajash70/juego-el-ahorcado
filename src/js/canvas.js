@@ -15,76 +15,6 @@ export function dibujarCanvas() {
 
     tablero.fillRect(0, 0, window.innerWidth, window.innerHeight);
 
-    // /linea uno base
-    tablero.beginPath();
-    tablero.moveTo(350, 500);
-    tablero.lineTo(700, 500);
-    tablero.stroke();
-    tablero.closePath();
-
-    // /linea dos vertical
-    tablero.beginPath();
-    tablero.moveTo(450, 500);
-    tablero.lineTo(450, 150);
-    tablero.stroke();
-    tablero.closePath();
-
-    // /linea tercera horizontal
-    tablero.beginPath();
-    tablero.moveTo(450, 150);
-    tablero.lineTo(610, 150);
-    tablero.stroke();
-    tablero.closePath();
-
-    // /linea cuarta vertical
-    tablero.beginPath();
-    tablero.moveTo(610, 150);
-    tablero.lineTo(610, 180);
-    tablero.stroke();
-    tablero.closePath();
-
-    // /cabeza
-    tablero.beginPath();
-    tablero.arc(610, 206, 24, 0, 2 * Math.PI);
-    tablero.stroke();
-    tablero.closePath();
-
-    // /tronco
-    tablero.beginPath();
-    tablero.moveTo(610, 400);
-    tablero.lineTo(610, 234);
-    tablero.stroke();
-    tablero.closePath();
-
-    // /manos izquierda
-    tablero.beginPath();
-    tablero.moveTo(610, 234);
-    tablero.lineTo(570, 255);
-    tablero.stroke();
-    tablero.closePath();
-
-    // /mano derecha
-    tablero.closePath();
-    tablero.beginPath();
-    tablero.moveTo(610, 235);
-    tablero.lineTo(650, 255);
-    tablero.stroke();
-    tablero.closePath();
-
-    // /pie izquierdo
-    tablero.beginPath();
-    tablero.moveTo(610, 400);
-    tablero.lineTo(580, 445);
-    tablero.stroke();
-    tablero.closePath();
-
-    // /pie derecho
-    tablero.closePath();
-    tablero.beginPath();
-    tablero.moveTo(610, 400);
-    tablero.lineTo(640, 445);
-    tablero.stroke();
-    tablero.closePath();
 }
 
 
@@ -100,6 +30,7 @@ export function dibujarLinea(palabraSecreta) {
     tablero.strokeStyle = "#0A3871";
 
     let anchura = 600 / palabraSecreta.length;
+
 
     for (let i = 0; i < palabraSecreta.length; i++) {
         const tablero = document.getElementById("forca").getContext("2d");
@@ -123,13 +54,130 @@ export function escribirLetraCorrecta(index, palabraSecreta) {
     tablero.strokeText(palabraSecreta[index], 340 + (anchura * index), 620);
     tablero.stroke();
 }
-export function escribirLetraIncorrecta(letra, errorsLeft) {
+export function escribirLetraIncorrecta(letra, intentos) {
     const tablero = document.getElementById("forca").getContext("2d");
     tablero.font = "bold 40px Inter";
     tablero.lineWidth = 2;
     tablero.lineCap = "round";
     tablero.lineJoin = "round";
     tablero.fillStyle = "#F3F5F6";
-    tablero.strokeText(letra, 200 + (50 * (10 - errorsLeft)), 720, 40);
+    tablero.strokeText(letra, 200 + (50 * (10 - intentos)), 720, 40);
+
+
+    console.log(intentos);
+    if (intentos == 9) {
+
+
+        // /linea uno base
+        tablero.beginPath();
+        tablero.moveTo(350, 500);
+        tablero.lineTo(700, 500);
+        tablero.stroke();
+        tablero.closePath();
+
+    }
+
+    if (intentos == 8) {
+        // /linea dos vertical
+        tablero.beginPath();
+        tablero.moveTo(450, 500);
+        tablero.lineTo(450, 150);
+        tablero.stroke();
+        tablero.closePath();
+
+    }
+
+    if (intentos == 7) {
+
+        // /linea tercera horizontal
+        tablero.beginPath();
+        tablero.moveTo(450, 150);
+        tablero.lineTo(610, 150);
+        tablero.stroke();
+        tablero.closePath();
+    }
+
+
+
+    if (intentos == 6) {
+        // /linea cuarta vertical
+        tablero.beginPath();
+        tablero.moveTo(610, 150);
+        tablero.lineTo(610, 180);
+        tablero.stroke();
+        tablero.closePath();
+    }
+
+
+
+    if (intentos == 5) {
+        // /cabeza
+        tablero.beginPath();
+        tablero.arc(610, 206, 24, 0, 2 * Math.PI);
+        tablero.stroke();
+        tablero.closePath();
+    }
+
+
+
+    if (intentos == 4) {
+        // /tronco
+        tablero.beginPath();
+        tablero.moveTo(610, 400);
+        tablero.lineTo(610, 234);
+        tablero.stroke();
+        tablero.closePath();
+    }
+
+
+
+    if (intentos == 3) {
+        // /manos izquierda
+        tablero.beginPath();
+        tablero.moveTo(610, 234);
+        tablero.lineTo(570, 255);
+        tablero.stroke();
+        tablero.closePath();
+    }
+
+
+
+    if (intentos == 2) {
+        // /mano derecha
+        tablero.closePath();
+        tablero.beginPath();
+        tablero.moveTo(610, 235);
+        tablero.lineTo(650, 255);
+        tablero.stroke();
+        tablero.closePath();
+    }
+
+
+
+    if (intentos == 1) {
+        // /pie izquierdo
+        tablero.beginPath();
+        tablero.moveTo(610, 400);
+        tablero.lineTo(580, 445);
+        tablero.stroke();
+        tablero.closePath();
+    }
+
+    if (intentos == 0) {
+        // /pie derecho
+        tablero.closePath();
+        tablero.beginPath();
+        tablero.moveTo(610, 400);
+        tablero.lineTo(640, 445);
+        tablero.stroke();
+        tablero.closePath();
+    }
+
+
+}
+
+export function escribirPalabra(palabra) {
+    const tablero = document.getElementById("forca").getContext("2d");
+    tablero.strokeText(palabra, 440, 820);
 
 }
