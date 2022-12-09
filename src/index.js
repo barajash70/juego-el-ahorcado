@@ -1,5 +1,6 @@
 import './css/style.css';
 import { dibujarCanvas, dibujarLinea, escribirLetraCorrecta, escribirLetraIncorrecta, escribirPalabra } from './js/canvas.js';
+import './assets/logo-alura.svg';
 
 
 
