@@ -1,7 +1,7 @@
 
 
 export function dibujarCanvas() {
-    const canvas = document.getElementById("forca");
+    const canvas = document.getElementById("horca");
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
@@ -10,19 +10,15 @@ export function dibujarCanvas() {
     tablero.lineWidth = 6;
     tablero.lineCap = "round";
     tablero.lineJoin = "round";
-    tablero.fillStyle = "#F3F5F6";
-    tablero.strokeStyle = "#0A3871";
+    tablero.fillStyle = "white";
+    tablero.strokeStyle = "red";
 
     tablero.fillRect(0, 0, window.innerWidth, window.innerHeight);
 
 }
 
-
-
-
-
 export function dibujarLinea(palabraSecreta) {
-    const tablero = document.getElementById("forca").getContext("2d");
+    const tablero = document.getElementById("horca").getContext("2d");
     tablero.lineWidth = 2;
     tablero.lineCap = "round";
     tablero.lineJoin = "round";
@@ -33,7 +29,7 @@ export function dibujarLinea(palabraSecreta) {
 
 
     for (let i = 0; i < palabraSecreta.length; i++) {
-        const tablero = document.getElementById("forca").getContext("2d");
+        const tablero = document.getElementById("horca").getContext("2d");
         tablero.moveTo(340 + (anchura * i), 640)
         tablero.lineTo(370 + (anchura * i), 640)
     }
@@ -43,9 +39,9 @@ export function dibujarLinea(palabraSecreta) {
 }
 
 export function escribirLetraCorrecta(index, palabraSecreta) {
-    const tablero = document.getElementById("forca").getContext("2d");
-    tablero.font = "bold 30px Inter";
-    tablero.lineWidth = 4;
+    const tablero = document.getElementById("horca").getContext("2d");
+    tablero.font = "bold 20px Inter";
+    tablero.lineWidth = 2;
     tablero.lineCap = "round";
     tablero.lineJoin = "round";
     tablero.fillStyle = "#F3F5F6";
@@ -55,8 +51,8 @@ export function escribirLetraCorrecta(index, palabraSecreta) {
     tablero.stroke();
 }
 export function escribirLetraIncorrecta(letra, intentos) {
-    const tablero = document.getElementById("forca").getContext("2d");
-    tablero.font = "bold 40px Inter";
+    const tablero = document.getElementById("horca").getContext("2d");
+    tablero.font = "bold 20px Inter";
     tablero.lineWidth = 2;
     tablero.lineCap = "round";
     tablero.lineJoin = "round";
@@ -177,7 +173,7 @@ export function escribirLetraIncorrecta(letra, intentos) {
 }
 
 export function escribirPalabra(palabra) {
-    const tablero = document.getElementById("forca").getContext("2d");
+    const tablero = document.getElementById("horca").getContext("2d");
     tablero.strokeText(palabra, 440, 820);
 
 }

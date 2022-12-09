@@ -7,33 +7,24 @@
 
     <title>Juego del ahorcado</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap" rel="stylesheet">
-    
-    <!-- <link rel="stylesheet" href="style.css"> -->
   </head>
     
   <body>
 
     <img src="./assets/logo-alura.svg" class="logo">
     <div id="div-desaparece" class="botonesHome">
+      <a href="#horca">
+        <input class="btnIniciar"  type="submit" value="Iniciar Juego" id="iniciar-juego">
+      </a> 
+    </div>
 
-      <a href="#forca">
-        <input class="btnIniciar visible"  type="submit" value="Iniciar Juego" id="iniciar-juego">
-      </a>
-    </div>
     
-    <div id="div-aparece-ahorcado" class="canvas" ></div>
+    <div class="canvas"><canvas id="horca" width="full" height="full"></canvas></div>
     
-    <div><canvas id="forca" width="full" height="full"></canvas></div>
-    <!-- <div class="subrayado"> -->
-    </div>
-    
+    </div> 
     
     <!-- JavaScript -->
     <script src="index.js"></script>
-    
-
-    
-
     
   </body>
 </html>
@@ -41,26 +32,3 @@
 
 
 
-<!-- <img src="./assets/logo-alura.svg" alt="logo">
-<section>
-
-
-  <button>Iniciar Juego</button>
-  <button>Agregar nueva palabra</button>
-</section>
-
-
-<textarea name="" id="" cols="30" rows="10" placeholder="Ingrese una palabra"></textarea>
-
-<section>
-  <img src="./assets/Vector.svg" alt="vector">
-  <p>Máx. de 8 letras</p>
-  <button>Guardar y Empezar</button>
-  <button>Cancelar</button>
-</section>
-
-
-<section>
-  <button>Nuevo juego</button>
-  <button>Desistir</button>
-</section> -->

@@ -19,6 +19,7 @@ let largoDeLetrasCorrectas = 0;
 
 
 
+
 //PalabraSecreta
 
 function escojerPalabraSecreta() {
@@ -51,9 +52,11 @@ function anadirLetraCorecta() {
 //Iniciar juego
 const iniciarJuegoBoton = document.getElementById("iniciar-juego");
 iniciarJuegoBoton.addEventListener("click", iniciarJuego);
+
+
+
 function iniciarJuego() {
     document.getElementById("iniciar-juego").style.display = "none";
-
     escojerPalabraSecreta();
     dibujarCanvas();
     dibujarLinea(palabraSecreta);
@@ -94,8 +97,19 @@ function iniciarJuego() {
             escribirPalabra("Perdiste");
         }
 
+
+
+
     });
 
 }
+
+
+
+
+
+
+
+
 
 
